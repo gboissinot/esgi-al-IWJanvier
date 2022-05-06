@@ -1,0 +1,16 @@
+@startuml
+skinparam monochrome true
+
+actor "User" as user #red
+participant "Web browser" as desktop
+participant "Web server" as webserver
+
+user -> desktop : access
+desktop -> webserver : GET /users
+webserver --> desktop : response
+
+desktop -> webserver : GET /users/{id}
+webserver --> desktop : response
+
+
+@enduml
